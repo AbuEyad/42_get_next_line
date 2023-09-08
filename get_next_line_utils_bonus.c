@@ -76,6 +76,8 @@ char	*return_remaining_txt(char *read_txt)
 	if (!rem_txt)
 		return (NULL);
 	i++;
+	if (!read_txt[i])
+		return (free(read_txt), free(rem_txt), NULL);
 	j = 0;
 	while (read_txt[i])
 		rem_txt[j++] = read_txt[i++];
